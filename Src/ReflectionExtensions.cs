@@ -11,6 +11,11 @@ namespace Conventional
             return typeof (T).IsAssignableFrom(t);
         }
 
+        public static bool IsConcreteClass(this Type t)
+        {
+            return t.IsClass && !t.IsAbstract;
+        }
+
         public static IEnumerable<Type> GetClosedInterfacesOf(this Type type, Type openGeneric)
         {
             return from i in type.GetInterfaces()

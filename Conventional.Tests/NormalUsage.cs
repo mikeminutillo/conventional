@@ -47,7 +47,9 @@ namespace Conventional.Tests
         {
             public bool Matches(Type t)
             {
-                return t.Namespace.Contains("Service") && t.HasInterfaces();
+                return t.IsConcreteClass()
+                    && t.Namespace.Contains("Service") 
+                    && t.HasInterfaces();
             }
         }
 
@@ -55,7 +57,7 @@ namespace Conventional.Tests
         {
             public bool Matches(Type t)
             {
-                return t.ClosesInterface(typeof (IHandler<>));
+                return t.IsConcreteClass() && t.ClosesInterface(typeof (IHandler<>));
             }
         }
     }
