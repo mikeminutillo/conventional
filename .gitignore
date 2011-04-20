@@ -1,0 +1,5 @@
+[Oo]bj/
+[Bb]in/
+_ReSharper.*
+*.suo
+TestResults/
