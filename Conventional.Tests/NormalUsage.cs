@@ -1,5 +1,6 @@
 ﻿using System;
 using Conventional.Tests.Helpers.Handlers;
+using Conventional.Tests.MoreServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Conventional.Tests
@@ -22,13 +23,17 @@ namespace Conventional.Tests
                     .For<Services>()
                     .For<Handlers>()
                     ;
+
+                x.ScanAssemblyContaining<ExternalService>()
+                    .For<Services>()
+                    ;
             });
         }
 
         [TestMethod]
         public void FindsServices()
         {
-            Assert.AreEqual(1, _services);
+            Assert.AreEqual(3, _services);
         }
 
         [TestMethod]

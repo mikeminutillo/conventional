@@ -56,6 +56,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Conventional.Tests.MoreServices\Conventional.Tests.MoreServices.csproj">
+      <Project>{74055A76-69F7-4A73-86C7-30416C1984B6}</Project>
+      <Name>Conventional.Tests.MoreServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Src\Conventional.csproj">
       <Project>{B6C6CA56-4F9D-49DA-B694-DCC9829C2F56}</Project>
       <Name>Conventional</Name>
