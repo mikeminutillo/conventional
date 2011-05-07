@@ -12,7 +12,8 @@ namespace Conventional
 
         public static ITypeScanner ScanAssembly(this IConventionsConfigurator config, Assembly assembly)
         {
-            return config.Scan(new AssemblyTypeSource(assembly));
+            var source = new FilteredTypeSource(t => t.IsConcreteClass(), new AssemblyTypeSource(assembly));
+            return config.Scan(source);
         }
 
         public static ITypeScanner ScanThisAssembly(this IConventionsConfigurator config)
