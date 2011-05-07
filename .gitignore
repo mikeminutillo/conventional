@@ -3,3 +3,4 @@
 _ReSharper.*
 *.suo
 TestResults/
+*.ReSharper.user
