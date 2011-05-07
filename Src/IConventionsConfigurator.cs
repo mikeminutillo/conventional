@@ -1,10 +1,6 @@
-using System;
-
 namespace Conventional
 {
-    public interface IConventionsConfigurator : IHideObjectMembers
+    public interface IConventionsConfigurator : IInstallerRegistry, IScannerRegistry
     {
-        void AddInstaller(Type conventionType, Action<Type> installer);
-        ITypeScanner Scan(ITypeSource typeSource);
     }
 }
