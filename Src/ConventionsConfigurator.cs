@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Conventional
 {
@@ -10,8 +11,14 @@ namespace Conventional
 
         internal void Run()
         {
-            foreach (var scanner in _typeScanners)
-                scanner.Run(GetInstaller);
+            foreach (var reg in _typeScanners.SelectMany(scanner => scanner.GetRegistrations()))
+                Register(reg);
+        }
+
+        private void Register(Registration reg)
+        {
+            var installer = GetInstaller(reg.ConventionType);
+            installer(reg.ScannedType);
         }
 
         private Action<Type> GetInstaller(Type key)

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace Conventional
 {
@@ -27,6 +28,18 @@ namespace Conventional
                 foreach (var type in types)
                     if (convention.Matches(type))
                         installers(convention.GetType())(type);
+        }
+
+        internal IEnumerable<Registration> GetRegistrations()
+        {
+            var types = new Lazy<IEnumerable<Type>>(() => _typeSource.GetTypes().ToList(),
+                                                     LazyThreadSafetyMode.ExecutionAndPublication);
+
+            return from c in _conventions.AsParallel().AsOrdered()
+                   let ct = c.GetType()
+                   from t in types.Value
+                   where c.Matches(t)
+                   select new Registration(ct, t);
         }
     }
 }
