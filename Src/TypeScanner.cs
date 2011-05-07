@@ -1,11 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 
 namespace Conventional
 {
-    public class TypeScanner : ITypeScanner
+    class TypeScanner : ITypeScanner
     {
         private readonly ITypeSource _typeSource;
         private readonly IList<IConvention> _conventions = new List<IConvention>();
