@@ -48,7 +48,10 @@
     <Compile Include="Guard.cs" />
     <Compile Include="IConvention.cs" />
     <Compile Include="IConventionsConfigurator.cs" />
+    <Compile Include="IConventionsProfile.cs" />
     <Compile Include="IHideObjectMembers.cs" />
+    <Compile Include="IInstallerRegistry.cs" />
+    <Compile Include="IScannerRegistry.cs" />
     <Compile Include="ITypeScanner.cs" />
     <Compile Include="ITypeSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
