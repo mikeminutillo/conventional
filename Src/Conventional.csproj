@@ -43,7 +43,6 @@
     <Compile Include="AssemblyTypeSource.cs" />
     <Compile Include="Conventions.cs" />
     <Compile Include="ConventionsConfigurator.cs" />
-    <Compile Include="ConventionsConfiguratorExtensions.cs" />
     <Compile Include="FilteredTypeSource.cs" />
     <Compile Include="Guard.cs" />
     <Compile Include="IConvention.cs" />
@@ -51,12 +50,14 @@
     <Compile Include="IConventionsProfile.cs" />
     <Compile Include="IHideObjectMembers.cs" />
     <Compile Include="IInstallerRegistry.cs" />
+    <Compile Include="InstallerRegistryExtensions.cs" />
     <Compile Include="IScannerRegistry.cs" />
     <Compile Include="ITypeScanner.cs" />
     <Compile Include="ITypeSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReflectionExtensions.cs" />
     <Compile Include="Registration.cs" />
+    <Compile Include="ScannerRegistryExtensions.cs" />
     <Compile Include="TypeScanner.cs" />
     <Compile Include="TypeScannerExtensions.cs" />
   </ItemGroup>
