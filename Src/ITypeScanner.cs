@@ -1,6 +1,6 @@
 namespace Conventional
 {
-    public interface ITypeScanner
+    public interface ITypeScanner : IHideObjectMembers
     {
         void AddConvention(IConvention convention);
     }
