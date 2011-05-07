@@ -31,11 +31,16 @@ namespace Conventional
 
         public void AddInstaller(Type conventionType, Action<Type> installer)
         {
+            Guard.IsNotNull(conventionType, "conventionType");
+            Guard.IsNotNull(installer, "installer");
+
             _installers[conventionType] = installer;
         }
 
         public ITypeScanner Scan(ITypeSource typeSource)
         {
+            Guard.IsNotNull(typeSource, "typeSource");
+
             var scanner = new TypeScanner(typeSource);
             _typeScanners.Add(scanner);
             return scanner;

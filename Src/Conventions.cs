@@ -13,6 +13,8 @@ namespace Conventional
             {
                 if (_hasRun)
                     throw new InvalidOperationException("You should only call Conventions.Configure once");
+                Guard.IsNotNull(configuration, "configuration");
+
                 var configurator = new ConventionsConfigurator();
                 configuration(configurator);
                 configurator.Run();

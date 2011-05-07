@@ -11,6 +11,9 @@ namespace Conventional
 
         public FilteredTypeSource(Func<Type, bool> filter, ITypeSource inner)
         {
+            Guard.IsNotNull(filter, "filter");
+            Guard.IsNotNull(inner, "inner");
+
             _filter = filter;
             _inner = inner;
         }

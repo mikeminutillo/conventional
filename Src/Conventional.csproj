@@ -45,6 +45,7 @@
     <Compile Include="ConventionsConfigurator.cs" />
     <Compile Include="ConventionsConfiguratorExtensions.cs" />
     <Compile Include="FilteredTypeSource.cs" />
+    <Compile Include="Guard.cs" />
     <Compile Include="IConvention.cs" />
     <Compile Include="IConventionsConfigurator.cs" />
     <Compile Include="IHideObjectMembers.cs" />

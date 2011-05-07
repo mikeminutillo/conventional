@@ -10,6 +10,8 @@ namespace Conventional
 
         public AssemblyTypeSource(Assembly assembly)
         {
+            Guard.IsNotNull(assembly, "assembly");
+
             _assembly = assembly;
         }
 

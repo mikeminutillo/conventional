@@ -15,6 +15,8 @@ namespace Conventional
 
         public void AddConvention(IConvention convention)
         {
+            Guard.IsNotNull(convention, "convention");
+
             _conventions.Add(convention);
         }
 
